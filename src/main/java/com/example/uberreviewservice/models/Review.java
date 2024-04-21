@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.util.Date;
 
@@ -12,6 +13,7 @@ import java.util.Date;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@EntityListeners(AuditingEntityListener.class)
 @Entity                //jis class ke upar ye annotation lagaoge wo ek table ban jayega humare databse me
 @Table(name = "bookingreview") //agar ye annotation hi daloge to ye class name ko uthake hi tabkle name bhi bana dega , so for cutome table name we use this
 public class Review {
@@ -40,6 +42,11 @@ public class Review {
     @Temporal(TemporalType.TIMESTAMP)
     @LastModifiedDate  //this annotation tells spring that only handle this jab koi update kar rha hogi either using dot gar private nhi h to , ya using setter , use ko isk load lene ka jaroorat nhi h , usko ye dono volumn ki value pass karne ki jarorat nhi h , sring sambhal lega
     private Date updatedAt;
+
+    @Override
+    public String toString() {
+        return "Review: " + this.content + " " + this.rating + " " + this.createdAt + " " + this.updatedAt;
+    }
 }
 
 /*
