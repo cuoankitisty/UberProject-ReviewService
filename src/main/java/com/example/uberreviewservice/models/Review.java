@@ -47,9 +47,11 @@ public class Review {
     public String toString() {
         return "Review: " + this.content + " " + this.rating + " " + this.createdAt + " " + this.updatedAt;
     }
+
+
 }
 
 /*
-    Note :entity annotation me bhi name property h , ye annotaion java layer yani humare codebase ke layer pe hi rheag , agar ye class kisi dure class se communictae karega to we use review , aur agar custom name dalna h to enity ke andar name dalo , aur usko apne java layer me use kar skte ho wo name )name only na ki booking review
+    Note :entity annotation me bhi name property h , ye annotation java layer yani humare codebase ke layer pe hi rheag , agar ye class kisi dure class se communictae karega to we use review , aur agar custom name dalna h to enity ke andar name dalo , aur usko apne java layer me use kar skte ho wo name )name only na ki booking review
     on the other hand table annotation ke andar jo name dale ho wo database layer pe rhega , databse pe is table se jo bhi karwana hoga wo hum bookingreview name se karenge
 */
