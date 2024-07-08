@@ -19,12 +19,12 @@ public class ReviewService implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         System.out.println("*****************");
-        Review r = Review.builder()
-                .content("Amazing content")
-                .rating(5.0)
-                .createdAt(new Date())   //Date object se ye timestamp utha rha h aur yan use kar rha h , lekin ye kaam to hum spring se karwana chahte h , taki user ko manually nhi karna pre
-                .updatedAt(new Date())
-                .build();
+//        Review r = Review.builder()
+//                .content("Amazing content")
+//                .rating(5.0)
+//                .createdAt(new Date())   //Date object se ye timestamp utha rha h aur yan use kar rha h , lekin ye kaam to hum spring se karwana chahte h , taki user ko manually nhi karna pre
+//                .updatedAt(new Date())
+//                .build();
 
         Review r2 = Review.builder()
                 .content("Amazing ride quality")
@@ -33,8 +33,8 @@ public class ReviewService implements CommandLineRunner {
 
 
 
-        System.out.println(r);
-        reviewRepository.save(r);  //this code executes sql query
+//        System.out.println(r);
+//        reviewRepository.save(r);  //this code executes sql query
         reviewRepository.save(r2);
 
         List<Review> reviews = reviewRepository.findAll();
